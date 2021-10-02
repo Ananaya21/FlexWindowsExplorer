@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -8,6 +8,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FolderModule } from './modules/folder/folder.module';
 import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
+import { SidebarComponent } from './shared/component/sidebar/sidebar.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { MatListModule } from '@angular/material/list';
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,14 +19,18 @@ import { MatTabsModule } from '@angular/material/tabs';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    MatListModule,
     AppRoutingModule,
     DefaultModule,
     BrowserAnimationsModule,
     FolderModule,
     MatTableModule,
-    MatTabsModule
+    MatTabsModule,
+    HttpClientModule
+
   ],
-  providers: [],
+  providers: [SidebarComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

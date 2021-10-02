@@ -1,10 +1,16 @@
 <app-header flexLayoutA="column"></app-header>
   <div flexLayout="row" fxFlex>
     <div fxFlex="20">
-      <app-sidebar></app-sidebar>
+      <app-sidebar (newItemEvent)="addItem($event)"
+      (newFolder)="addNewItem($event)"
+      ></app-sidebar>
     </div>
   <div fxFlex="80" class="content">
-    <router-outlet></router-outlet>
+    <mat-list-item *ngFor="let data of folderData">
+<div>
+      <div  fxLayoutAlign="start center" mat-line><mat-icon mat-list-icon>folder</mat-icon><span style="padding:0%">{{data.name}}</span></div>
+    </div>
+  </mat-list-item>
   </div>
   </div>
 <app-footer flexLayout="column"></app-footer>

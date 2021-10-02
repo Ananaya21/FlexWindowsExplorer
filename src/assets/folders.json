@@ -1,0 +1,31 @@
+{
+  "Folders":[
+    {
+      "id": "1",
+      "name": "Recipes",
+      "data":[
+        {
+          "name":"ananya"
+        },
+        {
+          "name":"lollu"
+        },
+        {
+          "name":"pollu"
+        }
+      ]
+    },
+    {
+      "name": "Work",
+      "id": "2",
+      "data":[
+        {
+          "name":"manish"
+        },
+        {
+          "name":"smart"
+        }
+      ]
+    }
+  ]
+}

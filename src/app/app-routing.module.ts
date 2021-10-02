@@ -11,7 +11,7 @@ const routes: Routes = [{
     component : HomeComponent ,
   },
   {
-    path: 'folder',
+    path: 'folder/:id',
     component : FolderComponent
   }]
 }];

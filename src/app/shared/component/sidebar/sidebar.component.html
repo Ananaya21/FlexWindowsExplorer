@@ -2,17 +2,33 @@
 
 <mat-list>
   <div mat-subheader>Folders</div>
-  <mat-list-item *ngFor="let folder of folders">
+  <!-- <mat-list-item *ngFor="let folder of folders">
     <mat-icon mat-list-icon>folder</mat-icon>
     <div mat-line>{{folder.name}}</div>
-    <div mat-line> {{folder.updated | date}} </div>
-  </mat-list-item>
+    <div mat-line> {{currentDate | date}} </div>
+  </mat-list-item> -->
+  <mat-selection-list
+  [multiple]=false
+  [(ngModel)]="selectedOption"
+(click)="valueChange()"
+  >
+    <mat-list-option
+    [value] = "data"
+    *ngFor="let data of folders">
+    <mat-icon mat-list-icon>folder</mat-icon>
+    {{data.name}}
+    </mat-list-option>
+
+  </mat-selection-list>
+
   <mat-divider></mat-divider>
   <div mat-subheader>Notes</div>
   <mat-list-item *ngFor="let note of notes">
     <mat-icon mat-list-icon>note</mat-icon>
     <div mat-line>{{note.name}}</div>
-    <div mat-line> {{note.updated | date}} </div>
+    <div mat-line> {{currentDate | date}} </div>
   </mat-list-item>
+  <mat-divider></mat-divider>
+  <button class="btn btn-primary" (click)="createFolder()">add folder</button>
 </mat-list>
 

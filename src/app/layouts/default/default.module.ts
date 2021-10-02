@@ -6,6 +6,8 @@ import { FolderComponent } from 'src/app/modules/folder/folder.component';
 import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
 @NgModule({
   declarations: [
     DefaultComponent,
@@ -13,10 +15,12 @@ import { SharedModule } from 'src/app/shared/shared.module';
     FolderComponent
   ],
   imports: [
+    MatIconModule,
     CommonModule,
     RouterModule,
     FlexLayoutModule,
-    SharedModule
+    SharedModule,
+    MatListModule
   ]
 })
 export class DefaultModule { }
